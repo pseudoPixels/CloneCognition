@@ -34,7 +34,7 @@ On Cloning and setting up the required environment for this project, you need to
 
 ###### 1. Make sure in the project directory
 ```
-$cd ML_CloneValidationFramework
+$cd CloneCognition
 ```
 
 ###### 2. Check the clone file format for validation
