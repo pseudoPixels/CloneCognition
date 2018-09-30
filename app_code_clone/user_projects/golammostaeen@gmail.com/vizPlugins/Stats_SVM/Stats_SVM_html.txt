@@ -1,0 +1,54 @@
+<SciWorC>
+    <toolInputs>
+        <toolInput>
+            <label>Dataset</label>
+            <referenceVariable>csv_dataset_path</referenceVariable>
+            <dataFormat>csv</dataFormat>
+        </toolInput>
+    </toolInputs>
+
+
+
+    <toolOutputs>
+        <toolOutput>
+            <label>Output Stats</label>
+            <referenceVariable>SVM_classification_stats</referenceVariable>
+            <dataFormat>txt</dataFormat>
+        </toolOutput>
+    </toolOutputs>
+
+
+    <toolConfigurations>
+        <br/><br/>
+         Select Feature Set for Training ('f_1','f_2','f_n'):
+        <input type="text" class="setting_param" value="featureSet=['Fare','SibSp']" name="cleaning_threshold" size="75"/>
+        <br/><br/>
+
+         Select Target Variable (e.g., class label variable):
+        <input type="text" class="setting_param" value="target='Survived'" name="cleaning_threshold" size="45"/>
+        <br/><br/>
+
+
+        Kernel Type(e.g., Specifies the kernel type to be used in the algorithm. It must be one of ‘rbf’, ‘sigmoid’):
+        <input type="text" class="setting_param" value="kernel_type='rbf'" name="cleaning_threshold" size="45"/>
+        <br/><br/>
+
+
+        n-fold cross validation:
+        <input type="text" class="setting_param" value="n=10" name="cleaning_threshold" size="45"/>
+        <br/><br/>
+
+    </toolConfigurations>
+
+
+
+    <toolDocumentation>
+        <b>Stats:: Stats_MissingValues</b>
+            <p><i>Description:</i><br/>
+            Calculates the missing values in the supplied dataset.
+        </p>
+    </toolDocumentation>
+
+</SciWorC>
+
+

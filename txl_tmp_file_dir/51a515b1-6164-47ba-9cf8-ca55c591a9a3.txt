@@ -1,0 +1,8 @@
+
+    private void copyDocument(InputStream is, OutputStream os) throws IOException {
+        byte[] buf = new byte[4096];
+        int len;
+        while ((len = is.read(buf))  0) {
+            os.write(buf, 0, len);
+        }
+    }

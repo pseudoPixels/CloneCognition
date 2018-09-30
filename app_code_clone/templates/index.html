@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>Cloud TXL Parser</title>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+  
+  </head>
+  <body>
+
+
+
+
+
+
+
+
+
+<script type="application/javascript">
+$(document).ready(function(){
+   
+
+
+	$("#txl_exec").click(function(){
+
+		var txl_source = $("#txl_source").val();
+		txl_source = encodeURIComponent(String(txl_source));
+
+		var input_to_parse = $("#input_to_parse").val();
+		input_to_parse = encodeURIComponent(String(input_to_parse));
+		
+
+		$.ajax({
+			type: "POST",
+			cache: false,
+			url: "/txl",
+			data: 'txl_source=' + txl_source + '&input_to_parse='+input_to_parse,
+			dataType:'json',
+			success: function (option) {
+			    //alert(option.txl_log);
+			    $("#txl_output").html(option.txl_output);
+			    $("#txl_log").html(option.txl_log);
+			    
+			},
+			error: function (xhr, status, error) {
+			    //alert(xhr.responseText);
+			    
+			}
+
+		    });
+
+	});
+
+    
+
+
+
+	
+});
+</script>
+
+{{e}}
+
+
+
+
+
+
+
+	<h4>Input File</h4>
+	<textarea rows="10" cols="100" id="input_to_parse"></textarea>
+
+	<h4>TXL</h4>
+	<textarea rows="10" cols="100" id="txl_source"></textarea>
+
+	<br/>
+	<button id="txl_exec">Exec</button>
+
+
+	<h4>Output</h4>
+	<p id="txl_output" style="background-color:#000000;color:#ffffff;"></p>
+
+	<h4>Log</h4>
+	<p id="txl_log" style="background-color:#000000;color:#ffffff;"></p>
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
+
+

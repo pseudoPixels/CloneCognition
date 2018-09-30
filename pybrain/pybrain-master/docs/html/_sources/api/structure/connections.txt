@@ -1,0 +1,29 @@
+:mod:`connections` -- Structural Components: Connections
+========================================================
+
+.. automodule:: pybrain.structure.connections.connection
+
+.. autoclass:: Connection
+   :members: __init__, forward, backward
+
+.. automodule:: pybrain.structure.connections
+
+.. autoclass:: FullConnection
+   :members:
+   :show-inheritance:
+
+.. autoclass:: IdentityConnection
+   :members:
+   :show-inheritance:
+
+.. autoclass:: MotherConnection
+   :members:
+   :show-inheritance:
+
+.. autoclass:: SharedConnection
+   :members: mother
+   :show-inheritance:
+
+.. autoclass:: SharedFullConnection
+   :show-inheritance:
+

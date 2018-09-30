@@ -1,0 +1,50 @@
+<SciWorC>
+    <toolInputs>
+        <toolInput>
+            <label>Dataset</label>
+            <referenceVariable>csv_dataset_path</referenceVariable>
+            <dataFormat>csv</dataFormat>
+        </toolInput>
+    </toolInputs>
+
+
+
+    <toolOutputs>
+        <toolOutput>
+            <label>Output Stats</label>
+            <referenceVariable>feature_distribution</referenceVariable>
+            <dataFormat>html</dataFormat>
+        </toolOutput>
+    </toolOutputs>
+
+
+
+    <toolConfigurations>
+         <br/>
+         Feature:
+        <input type="text" class="setting_param" value="feature='f2s'" name="cleaning_threshold" size="45"/>
+        <br/><br/>
+    </toolConfigurations>
+
+
+
+    <toolDocumentation>
+        <b>Stats:: Feature Categories By Class Labels</b>
+            <p><i>Description:</i><br/>
+            Graph plots of the categorical features for different class labels.
+        </p>
+
+
+        <i>Usage:</i>
+        <ol>
+            <li>Source Project: Select the module or files to take the input from.</li>
+            <li>Output Files: Select the module or files to send the input to.</li>
+            <li>Set Granularity Levels: Functions/Blocks.</li>
+        </ol>
+    </toolDocumentation>
+
+
+
+</SciWorC>
+
+

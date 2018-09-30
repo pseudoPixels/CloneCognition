@@ -1,0 +1,18 @@
+void init_files () {
+    char pidfile [STRLEN];
+    char statefile [STRLEN];
+    if (Run.pidfile == NULL) {
+        if (!getuid ()) {
+            snprintf (pidfile, STRLEN, "%s/%s", MYPIDDIR, MYPIDFILE);
+        }
+        else {
+            snprintf (pidfile, STRLEN, "%s/.%s", Run.Env.home, MYPIDFILE);
+        }
+        Run.pidfile = xstrdup (pidfile);
+    }
+    if (Run.statefile == NULL) {
+        snprintf (statefile, STRLEN, "%s/.%s", Run.Env.home, MYSTATEFILE);
+        Run.statefile = xstrdup (statefile);
+    }
+}
+

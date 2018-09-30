@@ -1,0 +1,4 @@
+Total Clone Pairs Validated: 4
+Predicted True Positive Clones: 1
+Predicted False Positive Clones: 3
+Predicted Precision: 0

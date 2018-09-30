@@ -1,0 +1,14 @@
+*.pyc
+*.egg-info
+*.xml
+*.o
+*.so
+*.log
+.settings
+build
+dist
+docs/sphinx/.build
+.DS_Store
+/pybrain/rl/environments/cartpole/fast_version/cartpolewrap.cpp
+/pybrain/rl/environments/cartpole/fast_version/cartpolewrap.pyd
+/.pydevproject

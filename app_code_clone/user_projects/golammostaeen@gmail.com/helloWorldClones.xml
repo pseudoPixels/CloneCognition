@@ -1,0 +1,130 @@
+<clones>
+<clone>
+<source file= "/home/khaledkucse/bigclonebench2.0/ijadataset/bcb_reduced/4/selected/1966294.java" startline= "168" endline= "181" />
+<code>
+    public static void copyWithRewrite(File srcFile, File destFile) throws IOException {
+        if (destFile.exists()) {
+            destFile.delete();
+        }
+        FileInputStream fileInputStream = new FileInputStream(srcFile);
+        FileOutputStream fileOutputStream = new FileOutputStream(destFile);
+        byte[] buffer = new byte[BUFFER_SIZE];
+        int byteCount;
+        while ((byteCount = fileInputStream.read(buffer))  0) {
+            fileOutputStream.write(buffer, 0, byteCount);
+        }
+        fileOutputStream.close();
+        fileInputStream.close();
+    }
+</code>
+<source file= "/home/khaledkucse/bigclonebench2.0/ijadataset/bcb_reduced/30/selected/2143514.java" startline= "58" endline= "65" />
+<code>
+public static void copyWithRewrite(File srcFile, File destFile) throws IOException {
+        if (destFile.exists()) {
+            destFile.delete();
+        }
+        FileInputStream fileInputStream = new FileInputStream(srcFile);
+        FileOutputStream fileOutputStream = new FileOutputStream(destFile);
+        byte[] buffer = new byte[BUFFER_SIZE];
+        int byteCount;
+        while ((byteCount = fileInputStream.read(buffer))  0) {
+            fileOutputStream.write(buffer, 0, byteCount);
+        }
+        fileOutputStream.close();
+        fileInputStream.close();
+    }
+</code>
+</clone>
+<clone>
+<source file= "/home/khaledkucse/bigclonebench2.0/ijadataset/bcb_reduced/4/selected/1966294.java" startline= "168" endline= "181" />
+<code>
+    public static void copyWithRewrite(File srcFile, File destFile) throws IOException {
+        if (destFile.exists()) {
+            destFile.delete();
+        }
+        FileInputStream fileInputStream = new FileInputStream(srcFile);
+        FileOutputStream fileOutputStream = new FileOutputStream(destFile);
+        byte[] buffer = new byte[BUFFER_SIZE];
+        int byteCount;
+        while ((byteCount = fileInputStream.read(buffer))  0) {
+            fileOutputStream.write(buffer, 0, byteCount);
+        }
+        fileOutputStream.close();
+        fileInputStream.close();
+    }
+</code>
+<source file= "/home/khaledkucse/bigclonebench2.0/ijadataset/bcb_reduced/30/selected/2146328.java" startline= "307" endline= "313" />
+<code>
+    public static final void copyInputStream(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int len;
+        while ((len = in.read(buffer)) = 0) out.write(buffer, 0, len);
+        in.close();
+        out.close();
+    }
+</code>
+</clone>
+<clone>
+<source file= "/home/khaledkucse/bigclonebench2.0/ijadataset/bcb_reduced/4/selected/1966294.java" startline= "168" endline= "181" />
+<code>
+    public static void copyWithRewrite(File srcFile, File destFile) throws IOException {
+        if (destFile.exists()) {
+            destFile.delete();
+        }
+        FileInputStream fileInputStream = new FileInputStream(srcFile);
+        FileOutputStream fileOutputStream = new FileOutputStream(destFile);
+        byte[] buffer = new byte[BUFFER_SIZE];
+        int byteCount;
+        while ((byteCount = fileInputStream.read(buffer))  0) {
+            fileOutputStream.write(buffer, 0, byteCount);
+        }
+        fileOutputStream.close();
+        fileInputStream.close();
+    }
+</code>
+<source file= "/home/khaledkucse/bigclonebench2.0/ijadataset/bcb_reduced/30/selected/217412.java" startline= "121" endline= "129" />
+<code>
+    public static final void copyInputStream(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int len;
+        while ((len = in.read(buffer)) = 0) {
+            out.write(buffer, 0, len);
+        }
+        in.close();
+        out.close();
+    }
+</code>
+</clone>
+<clone>
+<source file= "/home/khaledkucse/bigclonebench2.0/ijadataset/bcb_reduced/4/selected/1966294.java" startline= "168" endline= "181" />
+<code>
+    public static void copyWithRewrite(File srcFile, File destFile) throws IOException {
+        if (destFile.exists()) {
+            destFile.delete();
+        }
+        FileInputStream fileInputStream = new FileInputStream(srcFile);
+        FileOutputStream fileOutputStream = new FileOutputStream(destFile);
+        byte[] buffer = new byte[BUFFER_SIZE];
+        int byteCount;
+        while ((byteCount = fileInputStream.read(buffer))  0) {
+            fileOutputStream.write(buffer, 0, byteCount);
+        }
+        fileOutputStream.close();
+        fileInputStream.close();
+    }
+</code>
+<source file= "/home/khaledkucse/bigclonebench2.0/ijadataset/bcb_reduced/30/selected/2247417.java" startline= "378" endline= "386" />
+<code>
+    private ByteArrayOutputStream getByteOutputStreamForZipEntry(ZipInputStream zin) throws Exception {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(100000);
+        byte data[] = new byte[2048];
+        int count = 0;
+        while ((count = zin.read(data)) != -1) {
+            baos.write(data, 0, count);
+        }
+        return baos;
+    }
+</code>
+</clone>
+
+</clones>

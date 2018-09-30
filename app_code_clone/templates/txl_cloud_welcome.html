@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+<title>TXL CLOUD</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<style>
+body {
+margin : 0;
+padding : 0;
+font : 73% "Trebuchet MS", verdana, arial, sans-serif;
+background : #2e2e2e;
+color : #333;
+}
+#container {
+width : 100%;
+margin-left : auto;
+margin-right : auto;
+padding : 0;
+border : 5px solid #336633;
+background : #ffffff;
+color : #333;
+}
+			/*TOP BANNER*/
+#topimg {
+height : 50px;
+padding : 0;
+margin : 0;
+background : #417c2c;
+color : #333;
+}
+#topimg h1 {
+float : left;
+margin : 10px 0 0 15px;
+font-size : 150%;
+letter-spacing: 3px;
+color : #fff;
+background : #336633;
+}
+			/*TOP NAVIGATIONY*/
+#navcontainer ul {
+float : left;
+width : 100%;
+padding-left : 0;
+margin : 0 0 20px 0;
+font-size : 110%;
+border-top : 1px solid #fff;
+border-bottom : 1px solid #fff;
+background : #417c2c;
+color : #333;
+}
+#navcontainer ul li {
+display : inline;
+}
+#navcontainer ul li a {
+float : left;
+padding : 0.2em 1em;
+text-decoration : none;
+border-right : 1px solid #fff;
+background : #336633;
+color : #fff;
+}
+#navcontainer ul li a:hover, #navcontainer ul li a#current {
+background : #91ae00;
+color : #000;
+}
+			/*MAIN CONTENT*/
+#content {
+margin : 0 0 5px 170px;
+padding : 5px;
+border-left : 1px dashed #999;
+background : inherit;
+color : #333;
+}
+#content a:link, #content a:visited {
+text-decoration : underline;
+background : inherit;
+color : #417C2C;
+}
+#content a:hover {
+background : inherit;
+color : #91AE00;
+}
+			/*SIDEBAR*/
+#sidebar {
+float : left;
+width : 160px;
+margin : 0 10px 0 0;
+padding : 5px;
+background : #e9eee4;
+color : #333;
+}
+			/*SIDE MENU*/
+.sidemenu ul {
+list-style-type : none;
+text-align : left;
+}
+.sidemenu ul li {
+display : block;
+color : #666;
+background : inherit;
+}
+.sidemenu ul li a {
+background : transparent url(static/img/list-off.gif) no-repeat left center;
+padding-left : 10px;
+font : normal 13px "Lucida Grande", "Lucida Sans Unicode", verdana, lucida, sans-serif;
+text-decoration : none;
+color : #000;
+}
+.sidemenu ul li a:hover {
+background : transparent url(static/img/list-on.gif) no-repeat left center;
+color : #666;
+}
+.sidemenu ul li a#current {
+background : transparent url(static/img/list-active.gif) no-repeat left center;
+color : #666;
+}
+			/*FOOTER*/
+#footer {
+clear : both;
+padding : 5px;
+margin : 0;
+font-size : 90%;
+border-top : 1px solid #fff;
+background : #417c2c;
+color : #333;
+}
+#footer a:link, #footer a:visited {
+text-decoration : none;
+background : inherit;
+color : #fff;
+}
+#footer a:hover {
+border-bottom : 1px dashed #eee;
+background: inherit;
+color : #333;
+}
+			/*TYPOGRAPHY*/
+p {
+line-height: 1.7em;
+margin : 15px;
+}
+h1 {
+margin-top : 10px;
+padding : 0;
+font-size : 140%;
+text-transform : uppercase;
+letter-spacing: 3px;
+color : #336633;
+background : inherit;
+}
+h2 {
+margin : 10px 0 0 5px;
+padding-left : 10px;
+font-size : 120%;
+text-transform : uppercase;
+letter-spacing : 5px;
+color : #fff;
+background : #417c2c;
+}
+			/*CLASSES*/
+.img {
+float : left;
+padding : 10px;
+border : none;
+}
+.img a {
+border : none;
+}
+.post {
+background : #eee;
+padding : 3px;
+margin : 20px 10px 0 5px;
+border : 0 dashed #8a795d;
+font-size : 90%;
+}
+.post .date {
+background : url(img/clock.gif) no-repeat left center;
+padding-left : 15px;
+margin : 0 15px 0 5px;
+}
+.post .comments {
+background : url(img/comment.gif) no-repeat left center;
+padding-left : 15px;
+margin : 0 15px 0 5px;
+}
+.post .readmore {
+background : url(img/document.gif) no-repeat left center;
+padding-left : 15px;
+margin : 0 15px 0 5px;
+}
+blockquote {
+font-weight : bold;
+font-style : italic;
+color : #b29b35;
+}
+
+#pre_input_to_parse, #editor, #txl_log, #txl_output {
+margin: 0;
+position: relative;
+height:400px;
+width:95%;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+font-size:17px;
+}
+
+
+.numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 15px;
+    height: 15px;
+    padding: 10px;
+
+    background: #D4EFDF;
+    border: 2px solid #666;
+    color: #000;
+    text-align: center;
+
+    font: 12px Arial, sans-serif;
+    font-weight: bold;
+}
+
+
+</style>
+
+
+
+
+<div id="container">
+  <div id="topimg">
+    <h1>&nbsp { TXL CLOUD } &nbsp</h1>
+  </div>
+  <div id="navcontainer" >
+    <ul id="navlist" >
+<li style="float:right;"><a href="#">Login</a></li>
+ <li style="float:right;"><a href="#">Help and References</a></li>
+ <li  style="float:right;"><a  href="#">My Projects</a></li>
+      <li  style="float:right;"><a  href="#" >Quick Editor</a></li>
+      <li id="active" style="float:right;"><a id="current" href="#" >Home</a></li>
+
+
+
+
+
+    </ul>
+  </div>
+  <div style="clear:both;"></div>
+
+
+
+
+  <div id="sidebar">
+
+  </div>
+
+
+
+
+
+
+  <div id="content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-size:17px;">Welcome here...</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="clear:both;">
+<p style="height:200px;visibility:hidden;"><p>
+ </div>
+
+  </div>
+  <div id="footer"> <a href="#">homepage</a> | <a href="mailto:denise@mitchinson.net">contact</a> | <a href="http://validator.w3.org/check?uri=referer">html</a> | <a href="http://jigsaw.w3.org/css-validator">css</a> | &copy; 2007 Anyone | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a><br/>
+    This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a></div>
+</div>
+
+
+<script src="{{ url_for('static',filename='src-noconflict/ace.js') }}" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    //editor.setTheme("ace/theme/twilight"); abap
+    editor.session.setMode("ace/mode/abap");
+</script>
+
+</body>
+</html>

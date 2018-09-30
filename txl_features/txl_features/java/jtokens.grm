@@ -1,0 +1,156 @@
+% TXL Java 1.5 Basis Grammar
+% Version 3.6, March 2012
+
+% Copyright 2001-2012 James R. Cordy, Xinping Guo and Thomas R. Dean
+
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions are met:
+%
+%    Redistributions of source code must retain the above copyright notice, 
+%    this list of conditions and the following disclaimer.
+%    Redistributions in binary form must reproduce the above copyright notice,
+%    this list of conditions and the following disclaimer in the documentation
+%    and/or other materials provided with the distribution.
+%
+%    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+%    INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+%    AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+%    AUTHORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+%    OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+%    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+%    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+%    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+%    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+%    POSSIBILITY OF SUCH DAMAGE.
+
+% Based on the Java Language Specification, 2nd edition, 2001,
+% and updated to 3rd Edition, 2007
+
+% Modification Log:
+
+% v3.6, Jim Cordy, March 2012.
+%   Refactored to add [condition] for if/while conditions.
+
+% v3.5, Jim Cordy, July 2011.
+%   Tuning to improve parsing by specializing type components from reference compoenents
+
+% v3.4, Jim Cordy, June 2010.
+%   Minor fixes to annotations, reference components
+
+% v3.3, Krellner/Reichel (Chemnitz University of Technology, Germany), September/November 2008.
+%   New complex but JLS conform number token definition.
+%   Token definition for both DOS and UNIX newline usage.
+%   Fixed grammar resulted syntax errors.
+%   Allowed method calls appended to a new class or array creation.
+%   Modified class instance creations of nested/inner classes.
+%   Allowed default array annotation.
+%   Fixed logic error in class_instance_creation_expression.
+
+% v3.2, Jim Cordy, October 2008.
+%   Corrected method and constructor declarations to allow for generic parameters.
+
+% v3.1, Jim Cordy, May 2008.
+%   Validated on a range of open source Java software including JHotDraw 5.4b1,
+%   Eclipse-Ant, Eclipse-JDTcore, Java2 SDK 1.4.0-Swing, Netbeans-Javadoc and Spule.
+%   Updated to address slight problems.
+
+% v3.0, Tom Dean, October 2007.
+% -- updated to Java 5
+% -- added assert statement (Java 1.4)
+% -- added '$' to id character set
+% -- added for/in statement (Java 5)
+% -- added var arg modifier for method parametrs (Java 5)
+% -- added keyword static to imports(Java 5)
+% -- added enumerated types (Java 5)
+% -- fixed label_statement (java 1.2)
+% -- added annotations (Java 5)
+% -- previous versions of the grammar conflated declared_name and
+%    reference because javap inserted the package name as part of the
+%    class name when analyzing libraries. With generics this becomes
+%    too ambiguous. declared_name and refernce now have separate
+%    definitions. To handle javap output, redefine declared name
+%    as:
+%	redefine declared_name
+%	    [repeat pkg_class_prefix] [id] [opt generic_parameter]
+%	end redefine
+%    where pkg_class_prfix is defined as "[id] '."
+% -- removed >>, >>>, >>= and >>>= from compounds and inserted [SPOFF] [SPON]
+%    where they occur in the grammar. Conflicts with nested Genearics
+%    such as List<List<Integer>>
+% -- added generic and type wildcards (Java 5)
+%
+% -- TODO:
+%      * Unicode. Java supposedly is Unicode in Java 5. Not exactly
+%	 sure what it means for TXL.
+%      * String escape codes including \u for unicode
+
+% v2.0-2.3, Xinping Guo, July 2002.
+%  -- Added 'strictfp in defintion of modifier.
+%  -- Added [repeat component] after "( [expression] ') in defintion of primary.
+%  -- Redefined "primary". Removed "primary_component" and "dot_primary_component"
+%  -- Redefined "subprimary".
+%  -- Removed "field_access", "method_invocation" and "constructor_invocation".
+%  -- Redefined "reference".
+%  -- Defined "component".
+%  -- Defined "method_argument".
+%  -- Defined a new nonterminal type called "declared_name".
+%  -- "class_name", "interface_name", "variable_name" and "method_name" are "declared_name".
+%  -- Changed "reference" to "variable_name" in "catch_clause".
+%  -- In "constructor_declarator", changed "type_name" to "class_name".
+%  -- In "implements_clause", changed "class_name+" to "qualified_name+".
+%  -- Defined a new nonterminal type called "method_or_constructor_declaration".
+%  -- In "member_declaration", removed "field_declaration" and changed  
+%         "method_declaration" to "method_or_constructor_declaration".
+%  -- In "class_body_declaration", removed "constructor_declaration" and
+%         added "field_declaration".
+
+% v1.0, Jim Cordy, fall 2001.  
+
+
+% Lexical conventions of Java 
+
+% T.D. Oct 2007, added "$"
+#pragma -id "$" -width 32767
+
+tokens
+    space  "[ \t]+"
+    newline "\n" | "\n"
+    id  "[$\u][$\i]*"
+    number  "\d+[lL]?"  % DecimalIntegerLiteral | OctalIntegerLiteral
+          | "\d+.\d*([eE][+-]?\d+)?[fFdD]?"  % DecimalFloatingPointLiteral
+          | ".\d+([eE][+-]?\d+)?[fFdD]?"  % DecimalFloatingPointLiteral (cont.'d)
+          | "\d+[eE][+-]?\d+[fFdD]?"  % DecimalFloatingPointLiteral (cont.'d)
+          | "\d+([eE][+-]?\d+)?[fFdD]"  % DecimalFloatingPointLiteral (cont.'d)
+          | "0[xX][\dabcdefABCDEF]+.[pP][+-]?\d+[fFdD]?"  % HexadecimalFloatingPointLiteral
+          | "0[xX][\dabcdefABCDEF]*.[\dabcdefABCDEF]+[pP][+-]?\d+[fFdD]?"  % HexadecimalFloatingPointLiteral (cont.'d)
+          | "0[xX][\dabcdefABCDEF]+([pP][+-]?\d+)?[lLfFdD]?"  % HexIntegerLiteral | HexadecimalFloatingPointLiteral (cont.'d)
+end tokens
+
+comments
+    //
+    /*  */
+end comments
+
+% T.D. Oct 2007 added ...
+compounds
+    !=  '%=  &&  &=  *=  ++  +=   --  -=  /=  ^=  |=  ||
+    <<  <<=  <=  ==  >=   ...
+end compounds
+
+
+% Removed this and super - XG June 19, 2002
+% added assert and enum - TD Oct 2007
+% removed enum, cast, inner, they cannot be keywords - JRC Apr 08
+keys
+    'abstract 'assert 'boolean 'break 'byte
+    'case
+    'catch 'char 'class 'const 'continue
+    'default 'do 'double 'else 'enum 'extends
+    'false 'final 'finally 'float 'for
+    'goto 'if 'implements 'import
+    'instanceof 'int 'interface 'long
+    'native 'new 'null 'package 'private 'protected 'public 'return
+    'short 'static 'strictfp 'switch 'synchronized
+     'throw 'throws 'transient 'true 'try 'void 'volatile 'while
+end keys
+

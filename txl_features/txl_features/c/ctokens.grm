@@ -1,0 +1,165 @@
+% TXL C Basis Grammar
+% Version 5.3, March 2012
+
+% Copyright 1994-2012 James R. Cordy, Andrew J. Malton and Christopher Dahn
+
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions are met:
+%
+%    Redistributions of source code must retain the above copyright notice, 
+%    this list of conditions and the following disclaimer.
+%    Redistributions in binary form must reproduce the above copyright notice,
+%    this list of conditions and the following disclaimer in the documentation
+%    and/or other materials provided with the distribution.
+%
+%    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+%    INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+%    AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+%    AUTHORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+%    OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+%    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+%    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+%    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+%    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+%    POSSIBILITY OF SUCH DAMAGE.
+
+% Modification Log:
+
+% v5.3, Jim Cordy, March 2012.
+%    Refactored to use [condition] for all if/while conditions, 
+%    [block] for all compound statements and function bodies,
+%    and [literal] for all literal values.
+
+% v5.2, Jim Cordy, June 2011.
+%    Fixed performance / parsing problem involving macro cast operators.
+
+% v5.1, Jim Cordy, January 2011.
+%    Added new Linux attribute specs.
+
+% v5.0, Jim Cordy, November 2010.
+%    Fixed known bugs.
+%    Adapted to new inverted #ifdef resolution strategy.
+%    Tuned handling of macros and Gnu extensions.
+%    Added robustness for simple one-statement unparseable elements.
+
+% v4.2, Jim Cordy, June 2010.
+%    Corrected bug in output formatting of "..." and ".." which need spaces 
+%    around them to yield valid Gnu C.
+%    Corrected minor bug in [float] token pattern which ate "..." following an integer.
+%    Added a number of new observed Gnu C and Linux forms.
+
+% v4.1, Jim Cordy, May 2008.
+%    Validated on a large range of open source C software including Bison, Cook,
+%    Gzip, Postgresql, SNNS, Weltab, WGet, Apache HTTPD and the entire Linux 2.6 kernel.
+
+% v4.0, Jim Cordy, February 2008.
+%    Integrated overrides from several files, simplified and generalized handling of 
+%    preprocessor directives, optimized parsing of expressions, corrected categorization
+%    of declaration and statements.  #ifdefed handling of preprocessor directives,
+%    Gnu extensions and Linux-style macro calls.
+%    Added precedence to expression grammar.
+%    Corrected output formatting.
+
+% v3.0, Christopher Dahn, Drexel Uuniversity, summer 2004.
+%    Added Gnu C extensions as override grammar.
+
+% v2.0, Andrew Malton, University of Waterloo, spring 2002. 
+%    Many corrections and bug fixes, validation on several C sources.   
+
+% v1.0, Jim Cordy, Queen's University, January 1994.
+%    Original version, fromn ANSI C standard.
+
+
+% Comment out this line to disallow preprocessor directives
+#define PREPROCESSOR
+
+% Comment out this line to disallow Gnu extensions
+#define GNU
+
+% Comment out this line to disallow common Linux and other macro forms
+#define MACROS
+
+
+% ===== Lexical properties of C =====
+
+% $ and _ are allowed in identifiers, the string escape character is backslash, 
+% and wide source lines are allowed in output
+#pragma -idchars '$_' -esc '\\' -width 32726
+
+% Comments are /* */ and // to end of line
+comments
+    //
+    /* */
+end comments
+
+% Ignore line continuation characters
+tokens
+    ignore        "\\\n"
+end tokens
+
+% Add the special literal constants of C
+tokens
+    long          "\d+[LUlu]+"
+    hex           "0[xX][\dAaBbCcDdEeFf]+(.\d*)?p\d+[FLfl]?"
+		| "0[xX][\dAaBbCcDdEeFf]+[LUlu]*"
+    stringlit     "\"[(\\\c)#\"]*\""
+    dotfloat      ".\d+([eE][+-]?\d+)?[FLfl]?"
+    float         "\d+.\d*([eE][+-]?\d+)?[FLfl]?#\:."
+		| "\d+(.\d*)?[eE][+-]?\d+[FLfl]?"
+		| "\d+(.\d*)?([eE][+-]?\d+)?[FLfl]"
+	extra	"\\"
+end tokens
+
+% C identifiers may begin with digits
+tokens
+    id		| "\d+\i+"
+end tokens
+
+#ifdef MACROS
+tokens
+    foreachid    "(\a+_)?for_each(_\i+)?" 
+	      |  "FOR_ALL_\i+"      
+	      |  "foreach"
+    whileeachid  "while_each(_\i+)?" 
+              |  "whileeach" 
+end tokens
+#endif
+
+% Handle preprocessor directives in input.  When we're parsing, we really should be
+% processing preprocessed code, however it is possible to handle most code with the
+% preprocessor directives still in it.  This is an approximation that works for most uses, 
+% but some seriously misbalanced uses will still fail to parse and need hand editing.
+% Alternatively, Antoniol et al's then-part #ifdef resolution can be applied before parsing
+% and PREPROCESSOR is then not needed.
+
+#ifdef PREPROCESSOR
+tokens
+    % A preprocessor line is one beginning with a # and then anything to end of line (\n#n*)
+    % If the line ends in backslash, then it continues on the next line (\\\n)
+    % Comments are assumed to be part of the preprocessor line (/\*#[(\*/)]*\*/)
+    preprocessor_line  	  "\#[(\\\n)(/\*#[(\*/)]*\*/)#n]*"
+end tokens
+#endif
+
+% Keywords of C
+keys
+    auto            double          int             struct
+    break           else            long            switch
+    case            enum            register        typedef
+    char            extern          return          union
+    const           float           short           unsigned
+    continue        for             signed          void
+    default         goto            sizeof          volatile
+    do              if              static          while
+end keys
+
+% Compound symbols of C
+compounds
+    ->      ++      --      <<      >>      <=      >=      ==      !=
+    &&      ||      *=      /=      '%=     +=      -=
+    <<=     >>=     &=      ^=      |=
+#ifdef GNU
+    '.. '...
+#endif
+end compounds
+

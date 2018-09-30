@@ -1,0 +1,8 @@
+
+    private static int[] toTags(String[] tagStr) {
+        int[] tags = new int[tagStr.length];
+        for (int i = 0; i  tags.length; i++) {
+            tags[i] = toTag(tagStr[i]);
+        }
+        return tags;
+    }

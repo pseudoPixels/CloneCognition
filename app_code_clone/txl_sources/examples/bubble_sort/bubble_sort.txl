@@ -1,0 +1,14 @@
+% Sort.Txl - simple numeric bubble sort
+
+define program
+    [repeat number]
+end define
+
+rule main
+    replace [repeat number]
+        N1 [number] N2 [number] Rest [repeat number]
+    where
+        N1 [> N2]
+    by
+        N2 N1 Rest
+end rule
