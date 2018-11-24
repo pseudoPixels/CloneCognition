@@ -17,6 +17,10 @@ the trained model locally for code clone classification, this cloud based framew
 existing code clone detection tools for valdiation prediction responses using REST API. Please refer to the paper for 
 additional details of the framework [1].
 
+<p align="center">
+  <img src="images/schematicDiagram20.eps" width="80%" title="CloneCognition - Manual Clone Validation Framework">
+</p>
+
 
 # Installation
 Please make sure you have the following environment setups:
@@ -87,7 +91,7 @@ $python validateClones.py 0.5 input_clone_pairs/ out/
 ```
 
 <p align="center">
-  <img src="images/cloneCognition_manualValidation2.png" width="80%" title="System Architecture of the Clone Validation Framework">
+  <img src="images/cloneCognition_manualValidation2.png" width="80%" title="CloneCognition - Manual Clone Validation Framework">
 </p>
 
 
