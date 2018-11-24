@@ -2,9 +2,7 @@
 
 [![Backers on Open Collective](https://opencollective.com/nivo/backers/badge.svg?style=flat-square)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/nivo/sponsors/badge.svg?style=flat-square)](#sponsors)
-[![License][license-image]][license-url]
-[![Travis CI][travis-image]][travis-url]
-[![NPM version][npm-image]][npm-url]
+
 [![nivo channel on discord](https://img.shields.io/badge/discord-nivo-61dafb.svg?style=flat-square)](https://discord.gg/n7Ft74f)
 
 
