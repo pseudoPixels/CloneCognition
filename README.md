@@ -5,9 +5,9 @@
 
 
 # CloneCognition
-
-[![Backers on Open Collective](https://img.shields.io/badge/python-2.7-orange.svg?style=flat-square)](#backers)
 [![Sponsors on Open Collective](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](#sponsors)
+[![Backers on Open Collective](https://img.shields.io/badge/python-2.7-orange.svg?style=flat-square)](#backers)
+[![Sponsors on Open Collective](https://img.shields.io/badge/ubuntu-14.0%2B-yellow.svg?style=flat-square)](#sponsors)
 [![Sponsors on Open Collective](https://img.shields.io/badge/ANN-pyBrain-blue.svg?style=flat-square)](#sponsors)
 
 
