@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="images/cloneCognitionLogo.png" width="60%" title="CloneCognition - System High-Level Architecture">
+</p>
+
+
+
 # CloneCognition
 
 [![Backers on Open Collective](https://img.shields.io/badge/python-2.7-orange.svg?style=flat-square)](#backers)
