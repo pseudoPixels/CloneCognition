@@ -15,7 +15,7 @@ machine learning model has been build based on BigCloneBench [5] - a collection 
 IJaDataset-2.0, a big data software repository containing 25,000 open-source Java systems. In addition to the useability of 
 the trained model locally for code clone classification, this cloud based framework also supports the communication with any 
 existing code clone detection tools for valdiation prediction responses using REST API. Please refer to the paper for 
-additional details of the framework [1].
+additional details of the framework [1]. Following is a high-level architecutre of CloneCognition.
 
 <p align="center">
   <img src="images/cloneCognitionSysArch.png" width="60%" title="CloneCognition - System High-Level Architecture">
