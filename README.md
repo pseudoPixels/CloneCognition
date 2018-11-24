@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/cloneCognitionLogo.png" width="18%" title="CloneCognition - System High-Level Architecture">
+  <img src="images/cloneCognitionLogo.png" width="17%" title="CloneCognition">
 </p>
 
 
