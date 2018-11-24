@@ -1,4 +1,4 @@
-# Machine Learning Based Code Clone Validation Framework
+# CloneCognition
 A code clone is a pair of code fragments, within or between software systems that are similar. 
 Since code clones often negatively impact the maintainability of a software system, a great many 
 numbers of code clone detection techniques and tools have been proposed and studied over the last 
@@ -34,7 +34,7 @@ On Cloning and setting up the required environment for this project, you need to
 
 ###### 1. Make sure in the project directory
 ```
-$cd ML_CloneValidationFramework
+$cd CloneCognition
 ```
 
 ###### 2. Check the clone file format for validation
