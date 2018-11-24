@@ -91,7 +91,7 @@ $python validateClones.py 0.5 input_clone_pairs/ out/
 ```
 
 <p align="center">
-  <img src="images/newestReport.png" width="80%" title="CloneCognition - Manual Clone Validation Framework">
+  <img src="images/newestReport.png" width="60%" title="CloneCognition - ML Validation Framework">
 </p>
 
 
