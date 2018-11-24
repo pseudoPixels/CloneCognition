@@ -1,7 +1,7 @@
 # CloneCognition
 
-[![Backers on Open Collective](https://opencollective.com/nivo/backers/badge.svg?style=flat-square)](#backers)
-[![Sponsors on Open Collective](https://opencollective.com/nivo/sponsors/badge.svg?style=flat-square)](#sponsors)
+[![Backers on Open Collective](https://opencollective.com/nivo/backers/badge.svg?style=plastic)](#backers)
+[![Sponsors on Open Collective](https://opencollective.com/nivo/sponsors/badge.svg?style=plastic)](#sponsors)
 [![Sponsors on Open Collective](https://img.shields.io/badge/Android-ok-green.svg?style=plastic)](#sponsors)
 
 
