@@ -2,7 +2,7 @@
 
 [![Backers on Open Collective](https://img.shields.io/badge/python-2.7-orange.svg?style=flat-square)](#backers)
 [![Sponsors on Open Collective](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](#sponsors)
-[![Sponsors on Open Collective](https://img.shields.io/badge/Android-ok-green.svg?style=plastic)](#sponsors)
+[![Sponsors on Open Collective](https://img.shields.io/badge/ANN-pyBrain-blue.svg?style=flat-square)](#sponsors)
 
 
 
