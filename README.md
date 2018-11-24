@@ -89,7 +89,7 @@ For testing if everything has been set up accordingly, you can run the validatio
 ```
 $python validateClones.py 0.5 input_clone_pairs/ out/
 ```
-
+The following figure illustrates automatic validation report presented in from user interface in addition to textual report:
 <p align="center">
   <img src="images/newestReport.png" width="60%" title="CloneCognition - ML Validation Framework">
 </p>
