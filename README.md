@@ -46,9 +46,7 @@ Please make sure you have the following environment setups:
 
 
 
-<p align="center">
-  <img src="images/manualVal.gif" width="70%" title="CloneCognition - System High-Level Architecture">
-</p>
+
 
 
 
@@ -113,6 +111,9 @@ The following figure illustrates automatic validation report presented in from u
   <img src="images/newestReport.png" width="60%" title="CloneCognition - ML Validation Framework">
 </p>
 
+<p align="center">
+  <img src="images/manualVal.gif" width="70%" title="CloneCognition - System High-Level Architecture">
+</p>
 
 
 # Bugs/Issues?
