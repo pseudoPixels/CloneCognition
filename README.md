@@ -47,7 +47,7 @@ Please make sure you have the following environment setups:
 
 
 <p align="center">
-  <img src="images/manualVal.gif" width="60%" title="CloneCognition - System High-Level Architecture">
+  <img src="images/manualVal.gif" width="70%" title="CloneCognition - System High-Level Architecture">
 </p>
 
 
