@@ -86,6 +86,12 @@ For testing if everything has been set up accordingly, you can run the validatio
 $python validateClones.py 0.5 input_clone_pairs/ out/
 ```
 
+<p align="center">
+  <img src="images/cloneCognition_manualValidation2.png" width="80%" title="System Architecture of the Clone Validation Framework">
+</p>
+
+
+
 # Bugs/Issues?
 Please add your issues or bug reports to this git repository. We track the issues for further improvement of the framework. 
 
