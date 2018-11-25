@@ -38,7 +38,7 @@ existing code clone detection tools for valdiation prediction responses using RE
 additional details of the framework [1]. Following is a high-level architecutre of CloneCognition.
 
 <p align="center">
-  <img src="images/cloneCognitionSysArch.png" width="60%" title="CloneCognition - System High-Level Architecture">
+  <img src="images/cloneCognitionSysArch.png" title="CloneCognition - System High-Level Architecture">
 </p>
 
 
