@@ -117,7 +117,7 @@ The following figure illustrates automatic validation report presented in from u
 <p align="center">
   <img src="https://i.imgur.com/XIjQiiI.gif" width="60%" title="CloneCognition - Manual Clone Validation">
 </p>
-
+![](https://i.imgur.com/XIjQiiI.gif)
 
 # Bugs/Issues?
 Please add your issues or bug reports to this git repository. We track the issues for further improvement of the framework. 
