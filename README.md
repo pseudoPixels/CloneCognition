@@ -25,6 +25,10 @@ manually validated prior to any analysis in order to filter out the true positiv
 user-specific considerations. This manual clone validation effort is very time-consuming and often error-prone, 
 in particular for large-scale clone detection.
 
+<p align="center">
+  <img src="https://i.imgur.com/XIjQiiI.gif"  title="CloneCognition - Manual Clone Validation">
+</p>
+
 This is a machine learning based framework for automatic code clone validation - developed based on our recent 
 research study [1]. The method learns to predict tasks or user-specific code clone validation patterns. The current 
 machine learning model has been build based on BigCloneBench [5] - a collection of eight million validated clones within 
@@ -114,9 +118,6 @@ The following figure illustrates automatic validation report presented in from u
   <img src="images/newestReport.png" width="60%" title="CloneCognition - ML Validation Framework">
 </p>
 
-<p align="center">
-  <img src="https://i.imgur.com/XIjQiiI.gif"  title="CloneCognition - Manual Clone Validation">
-</p>
 
 
 # Bugs/Issues?
