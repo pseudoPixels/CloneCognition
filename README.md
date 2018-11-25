@@ -115,7 +115,7 @@ $python validateClones.py 0.5 input_clone_pairs/ out/
 ```
 The following figure illustrates automatic validation report presented in from user interface in addition to textual report:
 <p align="center">
-  <img src="images/newestReport.png" width="60%" title="CloneCognition - ML Validation Framework">
+  <img src="images/newestReport.png" width="60%" style="box-shadow: 10px 10px 8px 10px #888888;" title="CloneCognition - ML Validation Framework">
 </p>
 
 
