@@ -115,7 +115,7 @@ The following figure illustrates automatic validation report presented in from u
 </p>
 
 <p align="center">
-  <img src="images/manualVal.gif" width="60%" title="CloneCognition - Manual Clone Validation">
+  <img src="https://i.imgur.com/XIjQiiI.gif" width="60%" title="CloneCognition - Manual Clone Validation">
 </p>
 
 
