@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/cloneCognitionLogo.png" width="15%" title="CloneCognition">
+  <img src="docs/images/cloneCognitionLogo.png" width="15%" title="CloneCognition">
 </p>
 
 
