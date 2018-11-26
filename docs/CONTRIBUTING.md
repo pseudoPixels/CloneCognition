@@ -2,7 +2,7 @@
 
 Everyone is welcome to contribute this project. If you have an improvement or a bugfix please do open a pull request. 
 
-If you are unsure about any work, please just open an issue or send me (@Humpheh) a message with what you want to 
+If you are unsure about any work, please just open an issue with what you want to 
 do and I will get back to you as soon as I can!
 
 ### Resources
