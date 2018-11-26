@@ -38,7 +38,7 @@ existing code clone detection tools for valdiation prediction responses using RE
 additional details of the framework [1]. Following is a high-level architecutre of CloneCognition.
 
 <p align="center">
-  <img src="images/cloneCognitionSysArch.png" width="65%" title="CloneCognition - System High-Level Architecture">
+  <img src="docs/images/cloneCognitionSysArch.png" width="65%" title="CloneCognition - System High-Level Architecture">
 </p>
 
 
@@ -115,7 +115,7 @@ $python validateClones.py 0.5 input_clone_pairs/ out/
 ```
 The following figure illustrates automatic validation report presented in from user interface in addition to textual report:
 <p align="center">
-  <img src="images/newestReport.png" width="60%" style="box-shadow: 10px 10px 8px 10px #888888;" title="CloneCognition - ML Validation Framework">
+  <img src="docs/images/newestReport.png" width="60%" style="box-shadow: 10px 10px 8px 10px #888888;" title="CloneCognition - ML Validation Framework">
 </p>
 
 
