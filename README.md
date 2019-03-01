@@ -125,6 +125,8 @@ Get the new BigCloneBench2.1 from here https://drive.google.com/open?id=1v5LDVWX
 For training on new dataset you can use ANN_CloneValidator(https://github.com/pseudoPixels/ANN_CloneValidator) repository.
 Use the training script (https://github.com/pseudoPixels/ANN_CloneValidator/blob/master/clone_validator.py) for the new trained model. The script stores the learned model in a pickle file which can be plugged in for automatic clone validation as instruction shown in this readme document.
 
+# Result Visualization for new trained model
+Use the script (resultAnalysis2.py, resultAnalysis3.py, resultAnalysis4.py) from ANN_CloneValidator (https://github.com/pseudoPixels/ANN_CloneValidator) for different visualization of the obtained results.
 
 
 # Bugs/Issues?
