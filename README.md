@@ -121,6 +121,10 @@ The following figure illustrates automatic validation report presented in from u
 # New Dataset
 Get the new BigCloneBench2.1 from here https://drive.google.com/open?id=1v5LDVWXGbfN4a1oXvrwcGaXtX46uDR-4
 
+# Train On New Dataset
+For training on new dataset you can use ANN_CloneValidator(https://github.com/pseudoPixels/ANN_CloneValidator) repository.
+Use the training script (https://github.com/pseudoPixels/ANN_CloneValidator/blob/master/clone_validator.py) for the new trained model. The script stores the learned model in a pickle file which can be plugged in for automatic clone validation as instruction shown in this readme document.
+
 
 
 # Bugs/Issues?
