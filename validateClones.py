@@ -49,7 +49,8 @@ def app_code_clone_execTxl(txlFilePath, sourceCode, lang, saveOutputFile=False):
 
 	# write submitted source code to corresponding files
 	with open(sourceFile, "w") as fo:
-		fo.write(sourceCode)
+		#encode in unicode so that the program does not crash when strange unicode characters are encountered
+		fo.write(sourceCode.encode('utf-8'))
 
 	# get the required txl file for feature extraction
 	# txlPath = '/home/ubuntu/Webpage/txl_features/txl_features/java/PrettyPrint.txl'
@@ -78,7 +79,8 @@ def app_code_clone_execTxl(txlFilePath, sourceCode, lang, saveOutputFile=False):
 		outputFileLocation = str(uuid.uuid4())
 		outputFileLocation = 'txl_tmp_file_dir/' + outputFileLocation + '.txt'
 		with open(outputFileLocation, "w") as fo:
-			fo.write(out)
+			#encode in unicode so that the program does not crash when strange unicode characters are encountered
+			fo.write(out.encode('utf-8'))
 
 		return outputFileLocation, out, err
 
